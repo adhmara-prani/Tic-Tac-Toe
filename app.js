@@ -54,15 +54,30 @@ function checkWin() {
   ];
 
   for (let i = 0; i < wincondition.length; i++) {
-    let val0 = box[wincondition[i][0]].innerHTML;
-    let val1 = box[wincondition[i][1]].innerHTML;
-    let val2 = box[wincondition[i][2]].innerHTML;
+    let val0 = box[wincondition[i][0]];
+    let val1 = box[wincondition[i][1]];
+    let val2 = box[wincondition[i][2]];
 
-    if (val0 != '' && val0 === val1 && val0 === val2) {
+    if (
+      val0.innerHTML != '' &&
+      val0.innerHTML === val1.innerHTML &&
+      val0.innerHTML === val2.innerHTML
+    ) {
       gameover = 'true';
-      console.log(`${val0} wins!`);
-      outputText[0].innerHTML = `${val0} wins!`;
-      console.log(outputText);
+      console.log(`${val0.innerHTML} wins!`);
+      outputText[0].innerHTML = `${val0.innerHTML} wins!`;
+      if (val0.innerHTML == 'O') {
+        outputText[0].style.background = '#76B041';
+        val0.style.background = '#76B041';
+        val1.style.background = '#76B041';
+        val2.style.background = '#76B041';
+      } else {
+        outputText[0].style.color = 'black';
+        outputText[0].style.background = '#FDF0D5';
+        val0.style.background = '#FDF0D5';
+        val1.style.background = '#FDF0D5';
+        val2.style.background = '#FDF0D5';
+      }
     }
   }
 }
@@ -76,3 +91,6 @@ function playAgain() {
 }
 
 playAgain();
+
+// neon blue hex : #4D6CFA
+// raspberry : #D81E5B

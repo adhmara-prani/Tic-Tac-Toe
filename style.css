@@ -13,6 +13,10 @@ section {
   align-items: center;
 }
 
+body {
+  max-height: 100vh;
+}
+
 #cross {
   width: 10vh;
 }
@@ -60,23 +64,32 @@ h2 {
 
 .result {
   display: flex;
-  background: red;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 10vh;
-}
-
-.outro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 0vh;
+  position: relative;
+  bottom: 20vh;
+  gap: 5vh;
 }
 
 .output {
-  display: flex;
-  background: red;
   height: 5vh;
-  width: 5vh;
+  width: 25vh;
   color: white;
+  text-align: center;
+}
+
+.playagain {
+  width: 20vh;
+  height: 5vh;
+  border-radius: 5vh;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.playagain:active {
+  color: white;
+  background: #d81e5b;
+  scale: 0.9;
 }
