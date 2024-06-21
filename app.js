@@ -2,8 +2,6 @@ const box = document.querySelectorAll('.box');
 const replay = document.getElementsByClassName('playagain');
 const outputText = document.getElementsByClassName('output');
 
-console.log(replay[0]);
-console.log(box);
 let count = 0;
 let gameover = 'false';
 
@@ -72,7 +70,7 @@ function checkWin() {
         val1.style.background = '#76B041';
         val2.style.background = '#76B041';
       } else {
-        outputText[0].style.color = 'black';
+        outputText[0].style.color = '#000000';
         outputText[0].style.background = '#FDF0D5';
         val0.style.background = '#FDF0D5';
         val1.style.background = '#FDF0D5';
@@ -80,6 +78,12 @@ function checkWin() {
       }
     }
   }
+}
+
+function checkDraw() {
+  outputText[0].innerHTML = 'Draw!';
+  outputText[0].style.background = '#D8D4F2';
+  outputText[0].style.color = '#000000';
 }
 
 function playAgain() {
